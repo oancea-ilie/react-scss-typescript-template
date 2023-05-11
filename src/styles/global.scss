@@ -24,8 +24,3 @@
 @import 'modules/cursor';
 @import 'modules/forms';
 @import 'modules/buttons';
-@import 'modules/hero';
-
-.home {
-  @include font-weights();
-}
