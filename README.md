@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+## React TypeScript Sass Starter Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React.js adaptation of [Graffino Docker Ninja](https://github.com/Graffino/Graffino-Docker-Ninja) and 98% of the styling code is taken from there.
 
-## Available Scripts
+This is a starter template for building React projects with TypeScript and Sass, featuring alias paths, advanced Webpack configurations via Craco, and Prettier for code formatting.
 
-In the project directory, you can run:
+### Project Features
 
-### `yarn start`
+- Clean **HTML** file.
+- Restructured all the react-boiler-plate folders for best practices.
+- Added **Sass** starter code structure located in the src/styles folder.
+- Sass modules for each react component with examples (home and about).
+- The **Sass** modules object has types for each **CSS** class. That results in real-time **IntelliSense** for any **Sass** classes written inside the module, keeping the code tidy using the typescript-plugin-css-modules library.
+- For styling rules, the project has **.stylint** configured with the latest rules & plugins for the best and most scalable code.
+- For **JavaScript** code (**TS**, **TSX**) rules, the project has **.eslint** configured using **Airbnb** rules and some custom rules.
+- For code formatting, the project includes **Prettier**, and **.stylint**, .**eslint**, are configured for using **Prettier**.  
+  **tsconfig**, **eslint**, and **CRACO** config (Create React App Overrides) are configured for using **alias** **paths** (@components) for dynamic imports and easy future changes.
+- The **PurgeCSS** was added in package.json as a post-build operation. This will eliminate all the **CSS** code that is not used in **JSX**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### CRACO:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- configured to enable the .stylint warnings after the build was done.
+- configured for using the source-map based on the environment mode.
+- configured to create @styles alias for Sass alias paths imports.
+- configured to include the **SCSS** module without duplicating the class name with the file name (as it is as default).
 
-### `yarn test`
+### JSX
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The project includes a structured example of using React Router to create the routes and display them in the header navigation section with active link functionality implemented.
+- The project includes a common folder inside the /components folder that should include all shared components and has an example of a button component with multiple styles based on variant type.
+- In the /utils folder, the routes are structured as an array of objects. Also, the “classes” function helps the developer use a much cleaner way to combine simple string classes with module object properties and classes just by passing them as parameters. There are examples of this too.
+- The /assets folder is structured based on the asset type, and for fonts, for example, it is structured based on font file type ("wolff" and “woff2”).
 
-### `yarn build`
+### Some Advice
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Do not edit or delete the .vscode/ directory. It is used for changing Typescript version for the `typescript-plugin-css-modules` library to work property.
+- **You should not** edit the .eslint, tsconfig, craco config, or .stylint config files unless you really know what you are modifying.
+- The src/styles/common.scss file should not be replaced anywhere else. The Webpack from **CRACO** config is configured for that specific path.
+- For best practices, you should keep the style structure as the components and all the structures as they are.
+- If you need more alias paths, don't forget to update all the 3 files .eslitrrc.js file, tsconfig.js & CRACO file.
+- For best practice, you should only use scss for styling and not simply CSS. The whole project was created for that.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You need to have the following extensions:
 
-### `yarn eject`
+- prettier
+- stylelit
+- eslint
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Not needed, but will make your life much easier:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- auto rename tag
+- auto import
+- all autocomplete
+- CSS peek
+- sass
+- stylus
+- svg viewer
+- template string converter
+- remove unused imports
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To use this starter template, clone the repository and run the following commands:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm install`
 
-## Learn More
+`npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+or
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`yarn`
+
+`yarn start`
+
+For just building the project:
+
+`npm run build / yarn build`
+
+For buildings with additional information:
+
+`npm run build:verbose / yarn build:verbose`

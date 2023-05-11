@@ -1,0 +1,202 @@
+//? ---Base formats
+$base-font-size: 100%;
+$base-font-size-px: 16px;
+
+$default-font-size: 19px;
+$default-font-weight: 200;
+$default-line-height: 1.5;
+
+$body-font-size: 19px;
+$body-line-height: 1.5;
+
+$h1-font-size: 40px;
+$h1-line-height: 1.5;
+
+$h2-font-size: 34px;
+$h2-line-height: 1.5;
+
+$h3-font-size: 30px;
+$h3-line-height: 1.5;
+
+$h4-font-size: 27px;
+$h4-line-height: 1.5;
+
+$h5-font-size: 24px;
+$h5-line-height: 1.5;
+
+$h6-font-size: 21px;
+$h6-line-height: 1.5;
+
+//? Sizes
+$size-xs: rem(12px);
+$size-sm: rem(14px);
+$size-base: rem(16px);
+$size-lg: rem(18px);
+$size-xl: rem(20px);
+$size-2xl: rem(24px);
+$size-3xl: rem(30px);
+$size-4xl: rem(34px);
+$size-5xl: rem(40px);
+$size-6xl: rem(44px);
+$size-7xl: rem(50px);
+$size-8xl: rem(54px);
+$size-9xl: rem(60px);
+
+// ? custom typography
+.heading {
+  @include font-weights();
+  @include font-colors();
+
+  position: relative;
+  padding: 0;
+  color: $color-heading;
+  hyphens: auto;
+  word-break: break-word;
+  text-transform: uppercase;
+
+  //? Default font-family until webfonts are loaded
+  .no_fonts & {
+    font-family: $system-sans-font-stack;
+  }
+}
+
+.link {
+  @include font-weights();
+  @include link-colors();
+
+  position: relative;
+  display: inline;
+  vertical-align: middle;
+  background-image: linear-gradient(currentcolor, currentcolor);
+  background-position: center 100%;
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  color: $color-link;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transition-custom();
+  transition-property: all;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+  &._active {
+    color: $white;
+  }
+
+  &._type {
+    &_inverted {
+      background-size: 100% 1px;
+
+      &:hover {
+        background-size: 0 1px;
+        color: currentcolor;
+      }
+    }
+  }
+}
+
+.text {
+  @include font-weights();
+  @include font-colors();
+
+  color: $color-text;
+  font-size: rem($body-font-size);
+  font-weight: $medium;
+  line-height: $body-line-height;
+
+  //? Default font-family until webfonts are loaded
+  .no_fonts & {
+    font-family: $system-sans-font-stack;
+  }
+
+  &._no_wrap {
+    white-space: nowrap;
+  }
+
+  &._overflow_ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .link {
+    vertical-align: baseline;
+    line-height: inherit;
+    outline: none;
+  }
+
+  &._type {
+    &_transparent {
+      opacity: 0.6;
+    }
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+
+  &._style {
+    &_roman {
+      list-style-type: upper-roman;
+
+      .list__item {
+        &::before {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.quote {
+  color: $color-primary;
+  font-family: $serif-font-stack;
+  font-style: italic;
+}
+
+.code {
+  width: 100%;
+  padding: rem(10px) rem(30px);
+  background-color: $color-background-dark;
+
+  code {
+    color: $white;
+    font-family: $mono-font-stack;
+  }
+}
+
+.h1 {
+  font-size: rem($h1-font-size);
+  line-height: $h1-line-height;
+}
+
+.h2 {
+  font-size: rem($h2-font-size);
+  line-height: $h2-line-height;
+}
+
+.h3 {
+  font-size: rem($h3-font-size);
+  line-height: $h3-line-height;
+}
+
+.h4 {
+  font-size: rem($h4-font-size);
+  line-height: $h4-line-height;
+}
+
+.h5 {
+  font-size: rem($h5-font-size);
+  line-height: $h5-line-height;
+}
+
+.h6 {
+  font-size: rem($h6-font-size);
+  line-height: $h6-line-height;
+}

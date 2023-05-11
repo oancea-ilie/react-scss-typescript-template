@@ -1,0 +1,216 @@
+@use 'sass:math';
+
+// ? Defaults grid
+$max-columns: 12;
+
+$columns-gutter: 24px;
+$columns-gutter-large: 40px;
+
+$container-padding: 28px;
+$container-padding-small: 12px;
+
+$gutter-compensation: $columns-gutter * 0.5 * -1;
+$gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
+
+//? Grid classes
+.container {
+  box-sizing: border-box;
+  max-width: $container-width + 2 * $container-padding;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @include below(tablet) {
+    max-width: 100%;
+    padding-right: $container-padding-small;
+    padding-left: $container-padding-small;
+  }
+}
+
+.container_fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $container-padding;
+  padding-left: $container-padding;
+}
+
+.column {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: $columns-gutter * 0.5;
+  padding-left: $columns-gutter * 0.5;
+
+  @for $column from 1 through $max-columns {
+    &._spans_#{$column} {
+      flex-basis: math.div(100%, $max-columns) * $column;
+      max-width: math.div(100%, $max-columns) * $column;
+    }
+  }
+
+  @for $column from 0 through $max-columns {
+    &._offsets_#{$column} {
+      @if $column==0 {
+        margin-left: 0;
+      } @else {
+        margin-left: math.div(100%, $max-columns) * $column;
+      }
+    }
+  }
+
+  @each $name, $size in $breakpoints {
+    @for $column from 1 through $max-columns {
+      &._spans_#{$column}_#{$name} {
+        @media only screen and (max-width: $size) {
+          flex-basis: math.div(100%, $max-columns) * $column;
+          max-width: math.div(100%, $max-columns) * $column;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $size) {
+      @for $column from 0 through $max-columns {
+        &._offsets_#{$column}_#{$name} {
+          @if $column==0 {
+            margin-left: 0;
+          } @else {
+            margin-left: math.div(100%, $max-columns) * $column;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: $size) {
+      @for $order from 0 through 10 {
+        &._order_#{$order}_#{$name} {
+          order: $order;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $size) {
+      @for $order from 0 through 10 {
+        &._no_padding_#{$name}_down {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  &._order {
+    &_first {
+      order: -1;
+    }
+
+    &_last {
+      order: 1;
+    }
+  }
+}
+
+.columns {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  margin-right: $gutter-compensation;
+  margin-left: $gutter-compensation;
+
+  &._reversed {
+    flex-direction: row-reverse;
+  }
+
+  &._no_gutter {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &.align {
+    &_start {
+      justify-content: flex-start;
+    }
+
+    &_center {
+      justify-content: center;
+    }
+
+    &_end {
+      justify-content: flex-end;
+    }
+
+    &_top {
+      align-items: flex-start;
+    }
+
+    &_middle {
+      align-items: center;
+    }
+
+    &_bottom {
+      align-items: flex-end;
+    }
+  }
+
+  &._distribute {
+    &_around {
+      justify-content: space-around;
+    }
+
+    &_between {
+      justify-content: space-between;
+    }
+  }
+
+  &._masonry {
+    display: flex;
+    flex-flow: column wrap;
+
+    & > .column {
+      flex-basis: auto;
+      margin-bottom: rem(30px);
+
+      &._spans_6 {
+        width: 50%;
+      }
+
+      &._spans_12_tablet {
+        @include below(tablet) {
+          width: 100%;
+          margin-bottom: rem(10px);
+        }
+      }
+
+      .card {
+        height: auto;
+      }
+    }
+  }
+
+  &._equal_height {
+    & > .column {
+      margin-bottom: rem(30px);
+
+      @include below(tablet) {
+        margin-bottom: rem(20px);
+      }
+
+      & > * {
+        height: 100%;
+      }
+    }
+  }
+
+  &._gutter_large {
+    margin-right: $gutter-compensation-large;
+    margin-left: $gutter-compensation-large;
+
+    & > .column {
+      padding-right: $columns-gutter-large * 0.5;
+      padding-left: $columns-gutter-large * 0.5;
+    }
+  }
+}
+
+.masonry__wrapper {
+  display: flex;
+  max-height: rem(1000px);
+}

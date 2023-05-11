@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Footer from '@components/layout/footer/Footer';
+import Header from '@components/layout/header/Header';
+import { routes } from '@utils/routes';
+import { Routes, Route } from 'react-router-dom';
+import '@styles/global.scss';
 
 function App() {
+  // eslint-disable-next-line no-console
+  console.log('source map is enabled in development mode');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main className="main">
+        <Routes>
+          {routes.map(({ path, Component }) => (
+            <Route key={path} path={path} element={<Component />} />
+          ))}
+        </Routes>
+      </main>
+      <Footer />
+    </>
   );
 }
 
