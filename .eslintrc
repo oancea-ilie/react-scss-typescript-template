@@ -5,8 +5,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "prettier",
     "airbnb",
+    "prettier",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
@@ -22,7 +22,7 @@
     "sourceType": "module"
   },
   "rules": {
-    // ? Best practice rules
+    // ? Best practice rulesZ
     "no-underscore-dangle": 0,
     "prefer-destructuring": 1,
     "no-shadow": "off",
@@ -41,7 +41,7 @@
     "semi": "off",
 
     // ? React
-    "import/order": 0,
+    "import/order": 1,
     "import/no-unused-modules": [1, { "unusedExports": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
     "import/extensions": [1, "never", { "svg": "always" }],
@@ -83,6 +83,5 @@
         "extensions": [".ts", ".tsx", ".js", ".jsx"]
       }
     }
-  },
-  "ignorePatterns": ["node_modules/", "build/", "public/", ".git/"]
+  }
 }

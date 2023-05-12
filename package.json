@@ -25,8 +25,10 @@
     "start": "craco start",
     "build": "craco build",
     "build:verbose": "craco build --verbose",
-    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css"
-    
+    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css",
+    "lint": "eslint . --fix && echo lint competed.",
+    "stylelint": "stylelint '**/*.{css,scss}' --fix && echo stylelint competed.",
+    "lint:all": "yarn lint && yarn stylelint && echo all lint competed."
   },
   "eslintConfig": {
     "extends": [

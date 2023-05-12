@@ -1,6 +1,4 @@
-import {
-  createContext, useCallback, useMemo, useState,
-} from 'react';
+import { createContext, useCallback, useMemo, useState } from 'react';
 
 type ThemeMode = 'light' | 'dark';
 
@@ -8,6 +6,7 @@ interface ThemeContext {
   mode: ThemeMode;
   changeMode: (newMode: ThemeMode) => void;
 }
+
 export const ThemeContext = createContext<ThemeContext | null>(null);
 
 interface Props {

@@ -5,7 +5,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 module.exports = {
   style: {
     modules: {
-      localIdentName: '[local]-[hash:base64:3]',
+      localIdentName: '[local]_[hash:base64:3]',
     },
   },
   webpack: {

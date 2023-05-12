@@ -3,8 +3,8 @@ import Header from '@components/layout/header/Header';
 import { routes } from '@utils/routes';
 import { Routes, Route } from 'react-router-dom';
 import '@styles/global.scss';
-import useTheme from './hooks/useTheme';
 import { classes } from '@utils/classes';
+import useTheme from './hooks/useTheme';
 
 function App() {
   // eslint-disable-next-line no-console

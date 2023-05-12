@@ -1,7 +1,11 @@
 .footer {
   display: block;
-  padding-top: rem(20px);
-  padding-bottom: rem(20px);
+  padding: rem(20px);
   background-color: $color-background-dark;
-  text-align: center;
+  font-weight: $light;
+
+  &__text {
+    font-weight: $light;
+    text-align: center;
+  }
 }
