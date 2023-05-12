@@ -10,11 +10,14 @@ module.exports = {
   },
   webpack: {
     alias: {
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@utils': path.resolve(__dirname, 'src/utils'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@icons': path.resolve(__dirname, 'src/assets/icons'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@constants': path.resolve(__dirname, 'src/constants'),
+      '@contexts': path.resolve(__dirname, 'src/contexts'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@styles': path.resolve(__dirname, 'src/styles'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
     configure: (webpackConfig, { env }) => {
       if (env === 'production') {
@@ -25,7 +28,7 @@ module.exports = {
       webpackConfig.plugins.push(
         new StyleLintPlugin({
           files: '**/*.{scss,css}',
-          configFile: './.stylelintrc.js',
+          configFile: './.stylelintrc',
           syntax: 'scss',
         }),
       );

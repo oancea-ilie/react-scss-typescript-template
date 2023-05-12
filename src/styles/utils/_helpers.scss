@@ -141,7 +141,7 @@ $values: (0, 1, 2);
     border: 0 !important;
 
     @each $side in $sides {
-      &-#{$side} {
+      &_#{$side} {
         border-#{$side}: 0 !important;
       }
     }
@@ -152,7 +152,7 @@ $values: (0, 1, 2);
     padding: 0 !important;
 
     @each $side in $sides {
-      &-#{$side} {
+      &_#{$side} {
         padding-#{$side}: 0 !important;
       }
     }

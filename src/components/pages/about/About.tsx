@@ -6,6 +6,7 @@ function About() {
   const { about } = css;
   return (
     <section className="section">
+      <div className={classes(css.about__test, 'section')} />
       <div className={classes(about)}>
         <h1 className={classes(css.font_extralight, css.color_white)}>
           About Section

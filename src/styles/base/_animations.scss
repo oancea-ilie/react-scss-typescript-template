@@ -1,4 +1,4 @@
-@keyframes fade-in {
+@keyframes fade_in {
   0% {
     opacity: 0;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes fade-zoom-in {
+@keyframes fade_zoom_in {
   0% {
     opacity: 0;
     transform: scale3d(0.5, 0.5, 1);
@@ -25,7 +25,7 @@
   }
 }
 
-@keyframes slide-in-top {
+@keyframes slide_in_top {
   0% {
     opacity: 0;
     transform: translate3d(0, rem(-24px), 0);
@@ -37,7 +37,7 @@
   }
 }
 
-@keyframes slide-in-left {
+@keyframes slide_in_left {
   0% {
     opacity: 0;
     transform: translate3d(rem(-12px), 0, 0);
@@ -67,7 +67,7 @@
   }
 }
 
-@keyframes point-right {
+@keyframes point_right {
   0% {
     transform: translate3d(0, 0, 0);
   }

@@ -13,15 +13,12 @@ function Button({ children, variant }: Props) {
     case 'danger':
       cssClasses = classes('button', '_danger');
       break;
-
     case 'warning':
       cssClasses = classes('button', '_warning');
       break;
-
     case 'info':
       cssClasses = classes('button', '_info');
       break;
-
     default:
       cssClasses = 'button';
       break;
