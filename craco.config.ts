@@ -1,28 +1,37 @@
 import { CracoConfig } from '@craco/types';
 import path from 'path';
 import StylelintWebpackPlugin from 'stylelint-webpack-plugin';
-import removeClasses from 'postcss-remove-classes';
+import crypto from 'crypto';
+
+function threeLetterHash() {
+  const randomBytes = crypto.randomBytes(16);
+  const hash = crypto.createHash('md5').update(randomBytes).digest('hex');
+  return hash.substring(0, 4);
+}
 
 const config: CracoConfig = {
   style: {
     modules: {
-      localIdentName: '[local]-[hash:base64:3]',
+      // localIdentName: '[local]-[hash:base64:3]',
     },
     css: {
       loaderOptions: {
         modules: {
+          getLocalIdent: (
+            context: unknown,
+            localIdentName: string,
+            localName: string,
+          ) => {
+            if (localName.startsWith('key')) {
+              return localName;
+            }
+            return `${localName}-${threeLetterHash()}`;
+          },
           exportLocalsConvention: (className: string) =>
             className.replace(/--/g, '_modifier_').replace(/-/g, '_'),
         },
       },
     },
-    // postcss: {
-    //   loaderOptions: {
-    //     postcssOptions: {
-    //       config: path.resolve(__dirname, './postcss.config.js'),
-    //     },
-    //   },
-    // },
   },
 
   webpack: {

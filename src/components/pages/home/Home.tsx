@@ -9,10 +9,9 @@ import css from './home.module.scss';
 
 function Home() {
   console.log(css);
-
   return (
-    <section className={classes('section', css.key)}>
-      <div>
+    <section className={classes('section')}>
+      <div className={classes(css.home)}>
         <Check color="white" width={24} height={24} />
         <img src={edit} alt="edit" width={24} height={24} />
         {/* <div>

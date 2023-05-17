@@ -1,4 +1,4 @@
-@keyframes key {
+@keyframes key-fade-in {
   0% {
     opacity: 0;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes fade-out {
+@keyframes key-fade-out {
   0% {
     opacity: 1;
   }
