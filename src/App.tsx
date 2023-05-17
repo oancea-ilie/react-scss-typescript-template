@@ -8,10 +8,10 @@ import useTheme from './hooks/useTheme';
 
 function App() {
   // eslint-disable-next-line no-console
-  // console.log('source map enabled in development mode');
-  // const yourEnvVariable = process.env.REACT_APP_YOUR_ENV_VARIABLE;
+  console.log('source map enabled in development mode');
+  const yourEnvVariable = process.env.REACT_APP_YOUR_ENV_VARIABLE;
   // eslint-disable-next-line no-console
-  // console.log(yourEnvVariable)
+  console.log(yourEnvVariable);
 
   const { mode } = useTheme();
 

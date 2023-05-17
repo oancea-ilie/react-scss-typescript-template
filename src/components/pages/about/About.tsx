@@ -3,11 +3,11 @@ import { classes } from '@utils/classes';
 import css from './about.module.scss';
 
 function About() {
-  // const { about } = css;
+  const { about } = css;
 
   return (
     <section className="section">
-      <div>
+      <div className={classes(about)}>
         <h1>About Section</h1>
         <Button>Click</Button>
       </div>
