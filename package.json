@@ -28,6 +28,7 @@
   "scripts": {
     "start": "rm -rf node_modules/.cache && craco start",
     "build": "rm -rf node_modules/.cache && craco build",
+    "eject": "react-scripts eject",
     "build:verbose": "craco build --verbose",
     "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css echo purged css completed",
     "lint:js": "eslint . --fix && echo lint js competed.",
