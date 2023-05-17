@@ -11,7 +11,10 @@ function Header() {
       if (isVisible) {
         return (
           <div className="navigation__item" key={path}>
-            <Link className={`link ${isActivePath ? '_active' : ''}`} to={path}>
+            <Link
+              className={`link ${isActivePath ? 'link--active' : ''}`}
+              to={path}
+            >
               {name}
             </Link>
           </div>
