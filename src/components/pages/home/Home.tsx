@@ -14,7 +14,7 @@ function Home() {
       <div className={classes(css.home)}>
         <Check color="white" width={24} height={24} />
         <img src={edit} alt="edit" width={24} height={24} />
-        {/* <div>
+        <div>
           <img
             className="h_responsive_image"
             src={mountain}
@@ -22,7 +22,7 @@ function Home() {
             width={200}
             height={200}
           />
-        </div> */}
+        </div>
         <h1 className={classes('h1', 'h_font_extralight')}>Home Section</h1>
         <Button>Click</Button>
       </div>

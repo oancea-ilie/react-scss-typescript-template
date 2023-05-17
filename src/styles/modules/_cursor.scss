@@ -5,8 +5,8 @@
   left: 0;
 }
 
-.cursor_small {
-  @extend .h_z_index_max;
+.cursor-small {
+  @extend .h-z-index-max;
 
   top: rem(-2.5px);
   left: rem(-2.5px);

@@ -40,7 +40,7 @@ body {
   line-height: $default-line-height;
 
   //? Default font-family until webfonts are loaded
-  .no_fonts & {
+  .no-fonts & {
     font-family: $default-system-stack;
   }
 }
@@ -62,7 +62,7 @@ body {
   padding-bottom: $default-padding;
   background-color: $color-background;
 
-  &._background-dark {
+  &.-background-dark {
     background-color: $color-background-dark;
   }
 }

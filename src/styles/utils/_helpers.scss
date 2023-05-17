@@ -30,21 +30,21 @@ $values: (0, 1, 2);
   @include font-weights();
   @include font-colors();
 
-  &_width_100 {
+  &-width-100 {
     width: 100%;
   }
 
-  &_height_100 {
+  &-height-100 {
     height: 100%;
   }
 
-  &_responsive_image {
+  &-responsive-image {
     width: 100%;
     height: auto;
   }
 
   //? Hide element visually without removing it
-  &_visually_hidden {
+  &-visually-hidden {
     overflow: hidden !important;
     position: absolute !important;
     width: 1px !important;
@@ -55,37 +55,37 @@ $values: (0, 1, 2);
     clip: rect(0 0 0 0) !important;
   }
 
-  &_overflow {
-    &_hidden {
+  &-overflow {
+    &-hidden {
       overflow: hidden;
     }
   }
 
-  &_disable_click {
+  &-disable-click {
     pointer-events: none;
     cursor: pointer;
   }
 
   //? Text alignment for breakpoints
-  &_align {
+  &-align {
     @each $position in (left center right) {
-      &_#{$position} {
+      &-#{$position} {
         text-align: $position !important;
       }
     }
   }
 
-  &_line_height {
+  &-line-height {
     @each $value in $values {
-      &_#{$value} {
+      &-#{$value} {
         line-height: $value !important;
       }
     }
   }
 
-  &_float {
+  &-float {
     @each $float in (none left right) {
-      &_#{$float} {
+      &-#{$float} {
         float: $float !important;
       }
     }
@@ -94,32 +94,32 @@ $values: (0, 1, 2);
   //? Margin and Padding scale modifier classes
   @each $space in $space-amounts {
     @each $side in $sides {
-      &_m_#{$side}_#{$space} {
+      &-m-#{$side}-#{$space} {
         margin-#{$side}: #{$space}px !important;
       }
 
-      &_m_negative_#{$side}_#{$space} {
+      &-m-negative-#{$side}-#{$space} {
         margin-#{$side}: -#{$space}px !important;
       }
 
-      &_p_#{$side}_#{$space} {
+      &-p-#{$side}-#{$space} {
         padding-#{$side}: #{$space}px !important;
       }
 
       @each $name, $size in $breakpoints {
-        &_m_#{$side}_#{$space}_#{$name} {
+        &-m-#{$side}-#{$space}-#{$name} {
           @include below($name) {
             margin-#{$side}: #{$space}px !important;
           }
         }
 
-        &_m_negative_#{$side}_#{$space}_#{$name} {
+        &-m-negative-#{$side}-#{$space}-#{$name} {
           @include below($name) {
             margin-#{$side}: -#{$space}px !important;
           }
         }
 
-        &_p_#{$side}_#{$space}_#{$name} {
+        &-p-#{$side}-#{$space}-#{$name} {
           @include below($name) {
             padding-#{$side}: #{$space}px !important;
           }
@@ -129,70 +129,70 @@ $values: (0, 1, 2);
   }
 
   //? No margin classes
-  &_no_margin {
+  &-no-margin {
     margin: 0 !important;
 
     @each $side in $sides {
-      &_#{$side} {
+      &-#{$side} {
         margin-#{$side}: 0 !important;
       }
     }
   }
 
   //? No border classes
-  &_no_border {
+  &-no-border {
     border: 0 !important;
 
     @each $side in $sides {
-      &_#{$side} {
+      &-#{$side} {
         border-#{$side}: 0 !important;
       }
     }
   }
 
   //? No padding classes
-  &_no_padding {
+  &-no-padding {
     padding: 0 !important;
 
     @each $side in $sides {
-      &_#{$side} {
+      &-#{$side} {
         padding-#{$side}: 0 !important;
       }
     }
   }
 
-  &_clear {
+  &-clear {
     @include clearfix;
 
-    &_both {
+    &-both {
       clear: both;
     }
   }
 
   //? Text case
-  &_case {
-    &_normal {
+  &-case {
+    &-normal {
       text-transform: none !important;
     }
 
-    &_lowercase {
+    &-lowercase {
       text-transform: lowercase !important;
     }
 
-    &_uppercase {
+    &-uppercase {
       text-transform: uppercase !important;
     }
   }
 
   //? Text color
-  &_color {
-    &_inherit {
+  &-color {
+    &-inherit {
       color: inherit !important;
     }
   }
 
   //? Center
-  &_center {
+  &-center {
     //? Make sure the element doesn't have a float, otherwise the helper doesn't work
     float: none !important;
     margin-right: auto !important;
@@ -201,55 +201,55 @@ $values: (0, 1, 2);
 
   //? Display
   @each $type in (inline inline-block block flex inline-flex none) {
-    &_#{$type} {
+    &-#{$type} {
       display: $type !important;
     }
   }
 
   @each $type in (static relative fixed absolute) {
-    &_position_#{$type} {
+    &-position-#{$type} {
       position: $type !important;
     }
   }
 
   //? Align vertically via table method
-  &_vertical_align {
+  &-vertical-align {
     display: table-cell !important;
     vertical-align: middle;
 
-    &_middle {
+    &-middle {
       vertical-align: middle !important;
     }
   }
 
   //? min-Height 100%
-  &_full_height {
+  &-full-height {
     min-height: 100%;
   }
 
   //? min-Width 100%
-  &_full_width {
+  &-full-width {
     min-width: 100%;
   }
 
-  &_no_pointer_events {
+  &-no-pointer-events {
     pointer-events: none;
   }
 
-  &_word_break {
-    &_all {
+  &-word-break {
+    &-all {
       word-break: break-all;
     }
   }
 
-  &_nowrap {
+  &-nowrap {
     white-space: nowrap;
   }
 
   //? Position
-  &_position {
+  &-position {
     @each $position in (static relative absolute) {
-      &_#{$position} {
+      &-#{$position} {
         position: $position !important;
       }
     }
@@ -257,19 +257,19 @@ $values: (0, 1, 2);
 
   //? Z-index scale helper classes
   @for $i from 0 through 10 {
-    &_z_index {
-      &_#{$i} {
+    &-z-index {
+      &-#{$i} {
         z-index: $i * 100;
       }
 
-      &_max {
+      &-max {
         z-index: 2147483647;
       }
 
-      &_negative {
+      &-negative {
         z-index: -1;
 
-        &_#{$i} {
+        &-#{$i} {
           z-index: $i * -100;
         }
       }
@@ -278,32 +278,32 @@ $values: (0, 1, 2);
 
   //? Flex-grow scale helper classes
   @for $i from 0 through 10 {
-    &_flex_grow_#{$i} {
+    &-flex-grow-#{$i} {
       flex-grow: $i;
     }
   }
 
   //? Flex align-items helper classes
   @each $pos in (baseline center end flex-end flex-start left normal right) {
-    &_align_items_#{$pos} {
+    &-align-items-#{$pos} {
       align-items: $pos !important;
     }
   }
 
   //? Flex justify-content helper classes
   @each $pos in (center flex-end flex-start space-between space-around) {
-    &_justify_content_#{$pos} {
+    &-justify-content-#{$pos} {
       justify-content: $pos !important;
     }
   }
 
-  &_no_before {
+  &-no-before {
     &::before {
       content: none !important;
     }
   }
 
-  &_no_after {
+  &-no-after {
     &::after {
       content: none !important;
     }
@@ -311,19 +311,19 @@ $values: (0, 1, 2);
 
   //? Visibility helpers
   @each $name, $size in $breakpoints {
-    &_hide_#{$name}_up {
+    &-hide-#{$name}-up {
       @include above($name) {
         display: none !important;
       }
     }
 
-    &_hide_#{$name}_down {
+    &-hide-#{$name}-down {
       @include below($name) {
         display: none !important;
       }
     }
 
-    &_show_#{$name}_up {
+    &-show-#{$name}-up {
       display: none !important;
 
       @include above($name) {
@@ -331,7 +331,7 @@ $values: (0, 1, 2);
       }
     }
 
-    &_show_#{$name}_down {
+    &-show-#{$name}-down {
       display: none !important;
 
       @include below($name) {
@@ -339,13 +339,13 @@ $values: (0, 1, 2);
       }
     }
 
-    &_center_#{$name}_up {
+    &-center-#{$name}-up {
       @include above($name) {
         text-align: center !important;
       }
     }
 
-    &_center_#{$name}_down {
+    &-center-#{$name}-down {
       @include below($name) {
         text-align: center !important;
       }

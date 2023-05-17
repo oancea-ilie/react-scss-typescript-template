@@ -23,7 +23,7 @@
     color: $lapis-lazuli;
   }
 
-  &._danger {
+  &.-danger {
     background-color: $color-danger;
 
     &:hover {
@@ -32,7 +32,7 @@
     }
   }
 
-  &._warning {
+  &.-warning {
     background-color: $color-warning;
 
     &:hover {
@@ -41,7 +41,7 @@
     }
   }
 
-  &._info {
+  &.-info {
     background-color: $color-info;
 
     &:hover {

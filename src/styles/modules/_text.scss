@@ -39,7 +39,7 @@
   text-transform: uppercase;
 
   //? Default font-family until webfonts are loaded
-  .no_fonts & {
+  .no-fonts & {
     font-family: $system-sans-font-stack;
   }
 }
@@ -63,12 +63,12 @@
     color: $color-link-hover;
   }
 
-  &_active {
+  &-active {
     color: $white;
   }
 
-  &_type {
-    &_inverted {
+  &-type {
+    &-inverted {
       background-size: 100% 1px;
 
       &:hover {
@@ -88,15 +88,15 @@
   line-height: $body-line-height;
 
   //? Default font-family until webfonts are loaded
-  &_no_fonts & {
+  &-no-fonts & {
     font-family: $system-sans-font-stack;
   }
 
-  &_no_wrap {
+  &-no-wrap {
     white-space: nowrap;
   }
 
-  &_overflow_ellipsis {
+  &-overflow-ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -108,8 +108,8 @@
     outline: none;
   }
 
-  &_type {
-    &_transparent {
+  &-type {
+    &-transparent {
       opacity: 0.6;
     }
   }
@@ -121,8 +121,8 @@
   list-style: none;
   text-align: left;
 
-  &_style {
-    &_roman {
+  &-style {
+    &-roman {
       list-style-type: upper-roman;
 
       .list__item {

@@ -136,7 +136,7 @@ $font-colors: (
 
 @mixin font-weights {
   @each $weight, $value in $font-weights {
-    &_font_#{'' + $weight} {
+    &-font-#{'' + $weight} {
       font-weight: $value;
     }
   }
@@ -144,7 +144,7 @@ $font-colors: (
 
 @mixin font-colors {
   @each $key, $value in $font-colors {
-    &_color_#{'' + $key} {
+    &-color-#{'' + $key} {
       color: $value;
     }
   }
@@ -152,7 +152,7 @@ $font-colors: (
 
 @mixin link-colors {
   @each $key, $value in $font-colors {
-    &.color_#{'' + $key} {
+    &.color-#{'' + $key} {
       color: $value;
 
       &:hover {

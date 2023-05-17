@@ -26,7 +26,7 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
   }
 }
 
-.container_fluid {
+.container-fluid {
   margin-right: auto;
   margin-left: auto;
   padding-right: $container-padding;
@@ -40,14 +40,14 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
   padding-left: $columns-gutter * 0.5;
 
   @for $column from 1 through $max-columns {
-    &._spans_#{$column} {
+    &.-spans-#{$column} {
       flex-basis: math.div(100%, $max-columns) * $column;
       max-width: math.div(100%, $max-columns) * $column;
     }
   }
 
   @for $column from 0 through $max-columns {
-    &._offsets_#{$column} {
+    &.-offsets-#{$column} {
       @if $column==0 {
         margin-left: 0;
       } @else {
@@ -58,7 +58,7 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
 
   @each $name, $size in $breakpoints {
     @for $column from 1 through $max-columns {
-      &._spans_#{$column}_#{$name} {
+      &.-spans-#{$column}-#{$name} {
         @media only screen and (max-width: $size) {
           flex-basis: math.div(100%, $max-columns) * $column;
           max-width: math.div(100%, $max-columns) * $column;
@@ -68,7 +68,7 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
 
     @media only screen and (max-width: $size) {
       @for $column from 0 through $max-columns {
-        &._offsets_#{$column}_#{$name} {
+        &.-offsets-#{$column}-#{$name} {
           @if $column==0 {
             margin-left: 0;
           } @else {
@@ -80,7 +80,7 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
 
     @media only screen and (max-width: $size) {
       @for $order from 0 through 10 {
-        &._order_#{$order}_#{$name} {
+        &.-order-#{$order}-#{$name} {
           order: $order;
         }
       }
@@ -88,7 +88,7 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
 
     @media only screen and (max-width: $size) {
       @for $order from 0 through 10 {
-        &._no_padding_#{$name}_down {
+        &.-no-padding-#{$name}-down {
           padding-right: 0;
           padding-left: 0;
         }
@@ -96,12 +96,12 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
     }
   }
 
-  &._order {
-    &_first {
+  &.-order {
+    &-first {
       order: -1;
     }
 
-    &_last {
+    &-last {
       order: 1;
     }
   }
@@ -115,52 +115,52 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
   margin-right: $gutter-compensation;
   margin-left: $gutter-compensation;
 
-  &._reversed {
+  &.-reversed {
     flex-direction: row-reverse;
   }
 
-  &._no_gutter {
+  &.-no-gutter {
     margin-right: 0;
     margin-left: 0;
   }
 
   &.align {
-    &_start {
+    &-start {
       justify-content: flex-start;
     }
 
-    &_center {
+    &-center {
       justify-content: center;
     }
 
-    &_end {
+    &-end {
       justify-content: flex-end;
     }
 
-    &_top {
+    &-top {
       align-items: flex-start;
     }
 
-    &_middle {
+    &-middle {
       align-items: center;
     }
 
-    &_bottom {
+    &-bottom {
       align-items: flex-end;
     }
   }
 
-  &._distribute {
-    &_around {
+  &.-distribute {
+    &-around {
       justify-content: space-around;
     }
 
-    &_between {
+    &-between {
       justify-content: space-between;
     }
   }
 
-  &._masonry {
+  &.-masonry {
     display: flex;
     flex-flow: column wrap;
 
@@ -168,11 +168,11 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
       flex-basis: auto;
       margin-bottom: rem(30px);
 
-      &._spans_6 {
+      &.-spans-6 {
         width: 50%;
       }
 
-      &._spans_12_tablet {
+      &.-spans-12-tablet {
         @include below(tablet) {
           width: 100%;
           margin-bottom: rem(10px);
@@ -185,7 +185,7 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
     }
   }
 
-  &._equal_height {
+  &.-equal-height {
     & > .column {
       margin-bottom: rem(30px);
 
@@ -199,7 +199,7 @@ $gutter-compensation-large: $columns-gutter-large * 0.5 * -1;
     }
   }
 
-  &._gutter_large {
+  &.-gutter-large {
     margin-right: $gutter-compensation-large;
     margin-left: $gutter-compensation-large;
 
