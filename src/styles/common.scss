@@ -1,11 +1,6 @@
-@import "base/animations";
-@import "base/colors";
-@import "base/variables";
-@import "utils/functions";
-
-@import "base/fonts";
-@import "base/typography";
-@import "utils/debug";
-
-@include font-weights();
-@include font-colors();
+// @import 'base/animations';
+@import 'base/colors';
+@import 'base/variables';
+@import 'utils/functions';
+@import 'base/fonts';
+@import 'base/typography';

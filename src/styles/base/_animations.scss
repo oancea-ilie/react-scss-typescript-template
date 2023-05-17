@@ -1,4 +1,4 @@
-@keyframes fade_in {
+@keyframes key {
   0% {
     opacity: 0;
   }
@@ -8,87 +8,20 @@
   }
 }
 
-@keyframes fade_zoom_in {
+@keyframes fade-out {
   0% {
-    opacity: 0;
-    transform: scale3d(0.5, 0.5, 1);
-  }
-
-  75% {
-    opacity: 0.75;
-    transform: scale3d(1.1, 1.1, 1);
-  }
-
-  100% {
     opacity: 1;
-    transform: scale3d(1, 1, 1);
   }
-}
 
-@keyframes slide_in_top {
-  0% {
+  100% {
     opacity: 0;
-    transform: translate3d(0, rem(-24px), 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slide_in_left {
-  0% {
-    opacity: 0;
-    transform: translate3d(rem(-12px), 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes shake {
-  0% {
-    transform: translate3d(rem(-6px), 0, 0);
-  }
-
-  25% {
-    transform: translate3d(rem(6px), 0, 0);
-  }
-
-  75% {
-    transform: translate3d(rem(-6px), 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes point_right {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  40% {
-    transform: translate3d(rem(6px), 0, 0);
-  }
-
-  80% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
   }
 }
 
 .animation {
-  &_shake {
+  &-fade-in {
     animation-duration: 400ms;
-    animation-name: shake;
+    animation-name: fade-in;
     animation-timing-function: ease-in-out;
   }
 }

@@ -1,13 +1,30 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+import { CracoConfig } from '@craco/types';
+import path from 'path';
+import StylelintWebpackPlugin from 'stylelint-webpack-plugin';
+import removeClasses from 'postcss-remove-classes';
 
-module.exports = {
+const config: CracoConfig = {
   style: {
     modules: {
-      localIdentName: '[local]_[hash:base64:3]',
+      localIdentName: '[local]-[hash:base64:3]',
     },
+    css: {
+      loaderOptions: {
+        modules: {
+          exportLocalsConvention: (className: string) =>
+            className.replace(/--/g, '_modifier_').replace(/-/g, '_'),
+        },
+      },
+    },
+    // postcss: {
+    //   loaderOptions: {
+    //     postcssOptions: {
+    //       config: path.resolve(__dirname, './postcss.config.js'),
+    //     },
+    //   },
+    // },
   },
+
   webpack: {
     alias: {
       '@images': path.resolve(__dirname, 'src/assets/images'),
@@ -25,11 +42,10 @@ module.exports = {
       } else {
         webpackConfig.devtool = 'eval-source-map';
       }
-      webpackConfig.plugins.push(
-        new StyleLintPlugin({
+      webpackConfig.plugins?.push(
+        new StylelintWebpackPlugin({
           files: '**/*.{scss,css}',
           configFile: './.stylelintrc',
-          syntax: 'scss',
         }),
       );
 
@@ -37,3 +53,6 @@ module.exports = {
     },
   },
 };
+
+// eslint-disable-next-line import/no-unused-modules
+export default config;

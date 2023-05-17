@@ -1,6 +1,16 @@
 @import '@styles/common';
 
 .home {
-  padding: rem(20px);
-  background-color: $color-background-dark;
+  animation-duration: 400ms;
+  animation-name: key2;
+  animation-timing-function: ease-in-out;
+  background-color: red;
+
+  &__home-container {
+    background-color: $argentinian-blue;
+  }
+
+  &--bg-green {
+    background-color: green;
+  }
 }

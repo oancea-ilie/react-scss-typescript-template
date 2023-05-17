@@ -136,7 +136,7 @@ $font-colors: (
 
 @mixin font-weights {
   @each $weight, $value in $font-weights {
-    .font_#{'' + $weight} {
+    &_font_#{'' + $weight} {
       font-weight: $value;
     }
   }
@@ -144,7 +144,7 @@ $font-colors: (
 
 @mixin font-colors {
   @each $key, $value in $font-colors {
-    .color_#{'' + $key} {
+    &_color_#{'' + $key} {
       color: $value;
     }
   }

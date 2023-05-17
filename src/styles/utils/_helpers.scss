@@ -27,6 +27,9 @@ $sides: (t, b, l, r, x, y);
 $values: (0, 1, 2);
 
 .h {
+  @include font-weights();
+  @include font-colors();
+
   &_width_100 {
     width: 100%;
   }
